@@ -1,0 +1,151 @@
+Process:         a.out [16451]
+Path:            /Users/USER/*/a.out
+Load Address:    0x10a162000
+Identifier:      a.out
+Version:         ???
+Code Type:       X86-64
+Parent Process:  zsh [9445]
+
+Date/Time:       2021-07-05 20:26:27.505 +0900
+Launch Time:     2021-07-05 20:26:26.068 +0900
+OS Version:      macOS 11.1 (20C69)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         292K
+Physical footprint (peak):  292K
+----
+
+leaks Report Version: 4.0
+Process 16451: 168 nodes malloced for 12 KB
+Process 16451: 0 leaks for 0 total leaked bytes.
+
+[4]
+[2]
+[8]
+[5]
+[6]
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [4]
+POS = [2], CUR = [2]
+POS = [3], CUR = [8]
+POS = [4], CUR = [5]
+POS = [5], CUR = [6]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [6]
+POS = [2], CUR = [4]
+POS = [3], CUR = [2]
+POS = [4], CUR = [8]
+POS = [5], CUR = [5]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [5]
+POS = [2], CUR = [6]
+POS = [3], CUR = [4]
+POS = [4], CUR = [2]
+POS = [5], CUR = [8]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [8]
+POS = [2], CUR = [5]
+POS = [3], CUR = [6]
+POS = [4], CUR = [4]
+POS = [5], CUR = [2]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [2]
+POS = [2], CUR = [8]
+POS = [3], CUR = [5]
+POS = [4], CUR = [6]
+POS = [5], CUR = [4]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [4]
+POS = [2], CUR = [2]
+POS = [3], CUR = [8]
+POS = [4], CUR = [5]
+POS = [5], CUR = [6]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [6]
+POS = [2], CUR = [4]
+POS = [3], CUR = [2]
+POS = [4], CUR = [8]
+POS = [5], CUR = [5]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [5]
+POS = [2], CUR = [6]
+POS = [3], CUR = [4]
+POS = [4], CUR = [2]
+POS = [5], CUR = [8]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [8]
+POS = [2], CUR = [5]
+POS = [3], CUR = [6]
+POS = [4], CUR = [4]
+POS = [5], CUR = [2]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [2]
+POS = [2], CUR = [8]
+POS = [3], CUR = [5]
+POS = [4], CUR = [6]
+POS = [5], CUR = [4]
+RROT-TEST-----
+--------SHOW_STACK--------
+STACK SIZE = 6
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [4]
+POS = [2], CUR = [2]
+POS = [3], CUR = [8]
+POS = [4], CUR = [5]
+POS = [5], CUR = [6]
+-----TEST-----
+PB
+--------SHOW_STACK--------
+STACK SIZE = 5
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [2]
+POS = [2], CUR = [8]
+POS = [3], CUR = [5]
+POS = [4], CUR = [6]
+--------SHOW_STACK--------
+STACK SIZE = 2
+--------------------------
+POS = [0], CUR = [0] --> HEAD
+POS = [1], CUR = [4]

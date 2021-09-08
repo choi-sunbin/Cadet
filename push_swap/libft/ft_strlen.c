@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 14:36:19 by sunbchoi          #+#    #+#             */
-/*   Updated: 2021/07/05 17:35:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/23 22:04:37 by sunbchoi          #+#    #+#             */
+/*   Updated: 2020/12/23 22:18:27 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include "./libft/libft.h"
+#include "libft.h"
 
-int ft_revrot_func(t_list** stack);
-int ft_rot_func(t_list** stack);
-int	ft_push_func(t_list** stack1, t_list** stack2);
-int ft_swap_func(t_list** stack);
+size_t	ft_strlen(const char *dest)
+{
+	size_t	loop;
 
-#endif
+	loop = 0;
+	while (dest[loop] != 0)
+	{
+		loop++;
+	}
+	return (loop);
+}

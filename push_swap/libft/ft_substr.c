@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 14:36:19 by sunbchoi          #+#    #+#             */
-/*   Updated: 2021/07/05 17:35:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/28 18:38:33 by sunbchoi          #+#    #+#             */
+/*   Updated: 2021/07/16 17:30:19 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include "./libft/libft.h"
+#include "libft.h"
 
-int ft_revrot_func(t_list** stack);
-int ft_rot_func(t_list** stack);
-int	ft_push_func(t_list** stack1, t_list** stack2);
-int ft_swap_func(t_list** stack);
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char		*sub_str;
+	size_t		str_len;
 
-#endif
+	sub_str = (char*)ft_calloc(sizeof(char), len + 1);
+	if (s == 0)
+		return (0);
+	str_len = ft_strlen(s);
+	if (str_len <= start)
+		return (ft_strdup(""));
+	ft_strlcpy(sub_str, s + start, len + 1);
+	return (ft_strdup(sub_str));
+}

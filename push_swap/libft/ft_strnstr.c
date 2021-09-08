@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 14:36:19 by sunbchoi          #+#    #+#             */
-/*   Updated: 2021/07/05 17:35:50 by sunbchoi         ###   ########.fr       */
+/*   Created: 2020/12/23 23:06:07 by sunbchoi          #+#    #+#             */
+/*   Updated: 2021/01/04 01:08:27 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include "./libft/libft.h"
+#include "libft.h"
 
-int ft_revrot_func(t_list** stack);
-int ft_rot_func(t_list** stack);
-int	ft_push_func(t_list** stack1, t_list** stack2);
-int ft_swap_func(t_list** stack);
+char	*ft_strnstr(const char *dest, const char *src, size_t len)
+{
+	size_t	src_len;
 
-#endif
+	src_len = ft_strlen(src);
+	if (*src)
+	{
+		if (len == 0)
+			return (0);
+		while (len > 0 && ft_strncmp(dest, src, src_len) != 0)
+		{
+			if (len <= src_len)
+				return (0);
+			if (*dest == 0)
+				return (0);
+			dest++;
+			len--;
+		}
+	}
+	return ((char*)dest);
+}
