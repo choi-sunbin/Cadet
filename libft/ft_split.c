@@ -6,91 +6,76 @@
 /*   By: sunbchoi <sunbchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 17:34:13 by sunbchoi          #+#    #+#             */
-/*   Updated: 2021/11/25 17:46:47 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:53:00 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**str_malloc_count(char *str, char check)
+static int	ft_row(char const *s, char c)
 {
-	char	**words;
-	int		state;
-	int		count;
-	int		loop;
+	int	size;
 
-	state = 0;
-	count = 0;
-	loop = 0;
-	while (str[loop] != 0)
+	size = 0;
+	while (*s)
 	{
-		if (str[loop] == check)
-			state = 0;
-		else
+		if (*s && !(*s == c))
 		{
-			if (state == 0)
-				count++;
-			state = 1;
+			size++;
+			while (*s && !(*s == c))
+				s++;
 		}
-		loop++;
+		if (*s && (*s == c))
+			s++;
 	}
-	words = (char **)ft_calloc(sizeof(char *), count + 1);
-	return (words);
+	return (size);
 }
 
-char	*str_rangecopy(char *str, char check, size_t start)
+static int	ft_col(char const *s, char c)
 {
-	char	*dest;
-	size_t	len;
-	size_t	loop;
+	int	i;
 
-	len = start;
-	while (str[len] != check)
-		len++;
-	dest = (char *)ft_calloc(sizeof(char), (len - start + 1));
-	if (dest == 0)
-		return (0);
-	loop = 0;
-	while (loop + start < len)
-	{
-		dest[loop] = str[start + loop];
-		loop++;
-	}
-	dest[loop] = 0;
-	return (dest);
+	i = 0;
+	while (s[i] && !(s[i] == c))
+		i++;
+	return (i);
 }
 
-void	fill_words(char **words, char *str, char check)
+void	ft_free(char **str, int n)
 {
-	int		len;
-	int		state;
-	int		loop;
+	int	i;
 
-	len = -1;
-	state = 0;
-	loop = -1;
-	while (str[++len] != 0)
-	{
-		if (str[len] == check)
-			state = 0;
-		else if (state == 0)
-		{
-			words[++loop] = str_rangecopy(str, check, len);
-			state = 1;
-		}
-	}
-	words[++loop] = 0;
+	i = 0;
+	while (i <= n)
+		free(str[i++]);
+	free(str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**words;
+	char	**str;
+	int		i;
+	int		j;
 
-	if (s == 0)
+	i = 0;
+	str = (char **)ft_calloc(sizeof(char *), (ft_row(s, c) + 1));
+	if (str == NULL)
 		return (0);
-	words = str_malloc_count((char *)s, c);
-	if (words == 0)
-		return (0);
-	fill_words(words, (char *)s, c);
-	return (words);
+	while (*s)
+	{
+		j = 0;
+		if (*s && (*s == c))
+			s++;
+		if (*s && !(*s == c))
+		{
+			str[i] = (char *)ft_calloc(sizeof(char), (ft_col(s, c) + 1));
+			if (str[i] == NULL)
+				ft_free(str, i - 1);
+			while (*s && !(*s == c))
+				str[i][j++] = *s++;
+			str[i][j] = '\0';
+			i++;
+		}
+	}
+	return (str);
 }
