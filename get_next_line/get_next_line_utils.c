@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunbchoi <sunbchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: sunbchoi <sunbchoi>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 01:01:55 by sunbchoi          #+#    #+#             */
-/*   Updated: 2021/05/04 15:48:39 by sunbchoi         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:41:36 by sunbchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s == NULL)
@@ -43,7 +43,7 @@ char	*ft_strdup(char *s)
 	size_t	loop;
 
 	len = ft_strlen(s);
-	memory = (char*)malloc(len + 1);
+	memory = (char *)malloc(len + 1);
 	if (memory == 0)
 		return (0);
 	loop = 0;
@@ -86,9 +86,9 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (s1 == 0 && s2 == 0)
 		return (0);
-	s1_len = s1 ? ft_strlen(s1) : 0;
-	s2_len = s2 ? ft_strlen(s2) : 0;
-	str = (char*)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (str == 0)
 		return (0);
 	loop = 0;
